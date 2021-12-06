@@ -1,6 +1,7 @@
 import random as rand
 import os
-
+# data_dump basically reads the file
+# and returns it in sequence [[x1 y1 x2 y2...] for each sentence]
 def data_dump(path):
     with open(path, "r", encoding="cp437", errors='ignore') as f:
         
@@ -11,6 +12,8 @@ def data_dump(path):
             
         return sequence_list
 
+# splitting each sequence and keeping the inputs and outputs of each split
+# in the sequence in the list [[x1,y1],[x2,y2].....[x1,y1]... for each sentence]
 def data_dump_split(path):
     with open(path, "r", encoding="cp437", errors='ignore') as f:
         
@@ -30,7 +33,8 @@ def data_dump_split(path):
                 sequence_list.append([i[0], i[1]])
                 
         return sequence_list
-    
+
+# same as data_dump but the output list is shuffled  
 def data_dump_shuffle(path):
     with open(path, "r", encoding="cp437", errors='ignore') as f:
         
