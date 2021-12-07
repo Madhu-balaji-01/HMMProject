@@ -1,9 +1,9 @@
 import numpy as np
-import utils
+from utils import *
 
 def emission_counting(path):
     # get nested list from input file
-    seq = utils.data_dump(path)
+    seq = data_dump(path)
     
     # track emission count
     # key: state y, value: nested dictionary with key = obs x and value = frequency of this specific obs x
@@ -39,7 +39,7 @@ def emission_counting(path):
                     state_i1_dict[state_i2] = 1
                     
                 emission_dict[state_i1] = state_i1_dict
-                state_i1 = state_i2
+                #state_i1 = state_i2
                 
                 if j == i[len(i) - 1]:
                     end_sentence = True
@@ -92,3 +92,66 @@ def estimate_emission_param(emission_dict, x, y, k = 1):
         numerator = k
     return numerator / denominator
 
+def get_transition_parameters(transition_dict, state_i1, state_i2):
+    
+    if state_i1 not in transition_dict:
+        fraction = 0   
+    else:
+        state_i1_dict = transition_dict[state_i1]
+    
+    if state_i2 in state_i1_dict:
+        numerator = state_i1_dict[state_i2]
+    else:
+        numerator = 0
+        
+    denominator = sum(state_i1_dict.values())
+    fraction = numerator / denominator
+    
+    return fraction
+
+def labelling(inp,emission_dict,observations):
+    
+    return_list = []
+    
+    for i in inp:
+        
+        temp_list = []
+        
+        for j in i:
+            prob = 0
+            state = ""
+        
+            for y in emission_dict:
+            
+                if j not in observations:
+                    j = "#UNK#"
+                
+                if ((j == "#UNK#") or (j in emission_dict[y])):
+                
+                    if estimate_emission_param(emission_dict,j,y,1) > prob:
+                        prob = estimate_emission_param(emission_dict,j,y,1)
+                        state = y
+                        
+            temp_list.append(state)
+            
+        return_list.append(temp_list)
+                        
+    return return_list
+
+
+def final_answers_part1(data_file):
+    
+    train = "{folder}/train".format(folder = data_file)
+    test =  "{folder}/dev.in".format(folder = data_file)
+    
+    observations, emission_dict = emission_counting(train)
+    
+    test_sentences = data_dump(test)
+    
+    labels = labelling(test_sentences,emission_dict,observations)
+    
+    
+    
+    return(labels)
+    
+    
