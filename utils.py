@@ -3,7 +3,7 @@ import os
 # data_dump basically reads the file
 # and returns it in sequence [[x1 y1 x2 y2...] for each sentence]
 def data_dump(path):
-    with open(path, "r", encoding="cp437", errors='ignore') as f:
+    with open(path, "r", encoding="utf-8", errors='ignore') as f:
         
         sequence_list = []
         
@@ -15,7 +15,7 @@ def data_dump(path):
 # splitting each sequence and keeping the inputs and outputs of each split
 # in the sequence in the list [[x1,y1],[x2,y2].....[x1,y1]... for each sentence]
 def data_dump_split(path):
-    with open(path, "r", encoding="cp437", errors='ignore') as f:
+    with open(path, "r", encoding="utf-8", errors='ignore') as f:
         
         sequence_list = []
         temp1 = []
