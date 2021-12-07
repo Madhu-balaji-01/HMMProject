@@ -115,6 +115,8 @@ def viterbi(emission_counts, transition_counts, observations, train_obs):
         path_list.append(states[score_list.index(max_score)])
         print(path_list)
         break
+
+    
             
 train_obs, emission_counts = emission_counting('train')
 transition_counts = transition_counting('train')
