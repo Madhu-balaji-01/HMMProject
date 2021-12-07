@@ -91,10 +91,12 @@ def estimate_emission_param(emission_dict, x, y, k = 1):
     denominator = sum(state_dict.values()) + k
     
 
-    if x != "#UNK#":
+    if (x != "#UNK#") and (x in state_dict):
         numerator = state_dict[x]
-    else: 
+    elif x == "#UNK#": 
         numerator = k
+    else:
+        numerator = 0
     return numerator / denominator
 
 def get_transition_parameters(transition_dict, state_i1, state_i2):
