@@ -90,39 +90,46 @@ def viterbi(emission_counts, transition_counts, observations, train_obs):
             pi_scores[n+1][u] = pi_scores[n][u] + log_transition_param  # No emission for STOP state
         
         # Backward algorithm
-        back_tracker = ["STOP"]
+        back_tracker = []
         
-        for u_star in range(n,-1,-1):
+        for u_star in range(n,0,-1):
             temp = max(pi_scores[u_star], key=pi_scores[u_star].get)
             back_tracker.insert(0,temp)
             
         ultimate_path.append(back_tracker) 
         # print('Ultimate', ultimate_path)
-        
+    
     return(ultimate_path)    
 
 train_obs, emission_counts = emission_counting('train')
 transition_counts = transition_counting('train')
 observations = data_dump('./ES/dev.in')
 viterbi_outputs = viterbi(emission_counts, transition_counts,  observations, train_obs)
-print(viterbi_outputs)
+# print(viterbi_outputs)
 # all_prediction = l
 
-# with open('./ES/dev.in', "r", encoding="utf-8") as f:
-#             lines = f.readlines()
+with open('./ES/dev.in', "r", encoding="utf8") as f:
+            lines = f.readlines()
+            
+with open('./ES/dev.p2.out', "w", encoding="utf8") as g:
+    k = 0
+    num_lines = 0
+    for j in range(len(lines)):
+        word = lines[j].strip()
+        
+        if (word != ""):
+            print('1',j - num_lines)
+            path = viterbi_outputs[k][j - num_lines]
+            g.write(word + " " + path)
+            g.write("\n")
 
-# with open('./ES/dev.p2.out', "w", encoding="utf-8") as g:
-#     for j in range(len(lines)):
-#         word = lines[j].strip()
-#         if word != "\n":
-#             tag = viterbi_outputs[j]
-#             if(tag != "\n"):
-#                 g.write(word + " " + tag)
-#                 g.write("\n")
-#             else:
-#                 g.write("\n")
-                
-#all_prediction = final_answers_part1('RU')
+        else:
+            k+=1
+            num_lines = j + 1
+            g.write("\n")
+        
+            
+# all_prediction = final_answers_part1('RU')
                 
 # with open('./RU/dev.in', "r", encoding="utf8") as f:
 #             lines = f.readlines()
@@ -136,4 +143,4 @@ print(viterbi_outputs)
 #                 g.write(word + " " + tag)
 #                 g.write("\n")
 #             else:
-#                 g.write("\n")s
+#                 g.write("\n")
