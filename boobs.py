@@ -91,7 +91,7 @@ def estimate_emission_param(emission_dict, x, y, k = 1):
     denominator = sum(state_dict.values()) + k
     
 
-    if x != "#UNK#":
+    if (x != "#UNK#") and (x in state_dict):
         numerator = state_dict[x]
     else: 
         numerator = k
