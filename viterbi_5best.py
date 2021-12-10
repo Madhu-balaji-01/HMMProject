@@ -73,9 +73,10 @@ def viterbi_5_best(emission_counts, transition_counts, observations, train_obs):
                             log_transition_param = neg_inf
                         else:
                             log_transition_param = math.log(transition_param)
-
+                    
                         # Since we took log, we add pi_score + emission probablity + transition probability (not multiply)
-                        score_list.append(pi_scores[j][v] + log_emission_param + log_transition_param )
+                        current_score = pi_scores[j][v] + log_emission_param + log_transition_param
+                        score_list.append(current_score)
 
                     # Storing the maximum score over all v's
                     max_score = max(score_list)
