@@ -18,7 +18,7 @@ def viterbi(emission_counts, transition_counts, observations, train_obs):
         pi_scores[0] = {'START' : 1}
         # Sentence length
         n = len(observation)
-        
+
         path_list = []
         for j in range(n): 
             pi_scores[j+1] = {}
@@ -101,24 +101,23 @@ def viterbi(emission_counts, transition_counts, observations, train_obs):
     
     return(ultimate_path)    
 
-train_obs, emission_counts = emission_counting('train')
-transition_counts = transition_counting('train')
-observations = data_dump('./ES/dev.in')
+train_obs, emission_counts = emission_counting('./RU/train')
+transition_counts = transition_counting('./RU/train')
+observations = data_dump('./RU/dev.in')
 viterbi_outputs = viterbi(emission_counts, transition_counts,  observations, train_obs)
 # print(viterbi_outputs)
 # all_prediction = l
 
-with open('./ES/dev.in', "r", encoding="utf8") as f:
+with open('./RU/dev.in', "r", encoding="utf8") as f:
             lines = f.readlines()
             
-with open('./ES/dev.p2.out', "w", encoding="utf8") as g:
+with open('./RU/dev.p2.out', "w", encoding="utf8") as g:
     k = 0
     num_lines = 0
     for j in range(len(lines)):
         word = lines[j].strip()
         
         if (word != ""):
-            print('1',j - num_lines)
             path = viterbi_outputs[k][j - num_lines]
             g.write(word + " " + path)
             g.write("\n")
@@ -128,19 +127,3 @@ with open('./ES/dev.p2.out', "w", encoding="utf8") as g:
             num_lines = j + 1
             g.write("\n")
         
-            
-# all_prediction = final_answers_part1('RU')
-                
-# with open('./RU/dev.in', "r", encoding="utf8") as f:
-#             lines = f.readlines()
-
-# with open('./RU/dev.p2.out', "w", encoding="utf8") as g:
-#     for j in range(len(lines)):
-#         word = lines[j].strip()
-#         if word != "\n":
-#             tag = all_prediction[j]
-#             if(tag != "\n"):
-#                 g.write(word + " " + tag)
-#                 g.write("\n")
-#             else:
-#                 g.write("\n")

@@ -22,7 +22,10 @@ def transition_counting(path):
                 
                 word = j
                 word = word.rsplit(" ")
-                state_i2 = word[1]
+                if len(word) == 2:
+                    state_i2 = word[1]
+                else:
+                    state_i2 = word[2]
             
                 if state_i1 not in transition_dict:
                     state_i1_dict = {}

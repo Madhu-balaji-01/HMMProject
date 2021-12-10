@@ -52,7 +52,7 @@ def viterbi_5_best(emission_counts, transition_counts, observations, train_obs):
                     # Now we store all state names as well as the score, not only the max 
                     pi_scores[j+1][u] = {"START": current_score}
 
-                # Creating a copy of pi_scores ----
+                # Creating a copy of pi_scores 
                 copy_of_pi_scores = copy.deepcopy(pi_scores)
                
             # From the second word till the second last word
@@ -75,7 +75,7 @@ def viterbi_5_best(emission_counts, transition_counts, observations, train_obs):
                             log_transition_param = math.log(transition_param)
 
                         # Since we took log, we add pi_score + emission probablity + transition probability (not multiply)
-                        score_dict[u] = {v : pi_scores[j][v] + log_emission_param + log_transition_param}
+                        score_list.append(pi_scores[j][v] + log_emission_param + log_transition_param )
 
                     # Storing the maximum score over all v's
                     max_score = max(score_list)

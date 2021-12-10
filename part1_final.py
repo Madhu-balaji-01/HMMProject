@@ -26,7 +26,7 @@ def emission_counting(path):
                 
                 if(len(word) != 2):
                     state_i1 = word[2]
-                    state_i2 = word[0] + word[1]
+                    state_i2 = word[0] + ' ' + word[1]
                     
                 else:
                     state_i1 = word[1]
@@ -83,7 +83,6 @@ def estimate_emission(emission_dict, x, y):
     return numerator / denominator
 
 def estimate_emission_param(emission_dict, x, y, k = 1):
-
     state_dict = emission_dict[y]
     
     denominator = sum(state_dict.values()) + k
