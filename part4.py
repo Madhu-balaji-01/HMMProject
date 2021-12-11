@@ -25,8 +25,9 @@ def train_perceptron(train_data_path, lr = 0.3):
         for word_tag in sentence:
             word_tag = word_tag.split()
             states.add(word_tag[1])
-
+    i=0
     for sentence in train_data:
+        # print(sentence)
         # Split into observations and tags
         observations, tags = [], []
         for i in range(len(sentence)):
@@ -53,7 +54,10 @@ def train_perceptron(train_data_path, lr = 0.3):
             # Penalize wrong predictions
             for feat, count in predicted_feature_vec.items():
                 feature_weights[feat] = feature_weights[feat] - lr * count
-             
+        i+=1
+        if i==5:
+            break
+        
     return feature_weights, states
 
 
@@ -177,7 +181,7 @@ def viterbi_perceptron(feature_weights, states, observation):
         else:
             for u in states:
                 score_list = []     
-                for v in states:
+                for v in pi_scores[j].keys():
                     if j < n-1:
                         next_word = observation[j+1]
                     else:
@@ -196,7 +200,7 @@ def viterbi_perceptron(feature_weights, states, observation):
             
     # Transition from last state to 'STOP'
     pi_scores[n+1] = {}
-    for u in states:
+    for u in pi_scores[n].keys():
         current_weight = feature_weights[(u, "STOP")]
         pi_scores[n+1][u] = pi_scores[n][u] +  current_weight
     
@@ -210,6 +214,56 @@ def viterbi_perceptron(feature_weights, states, observation):
     ultimate_path.append(back_tracker) 
     # print(ultimate_path)
     return ultimate_path
+    #  # Base Case
+    #     k = 1
+    #     pi = {
+    #         k: {}
+    #     }
+    #     pi_edge = {
+    #         k: {}
+    #     }
+    #     for state in states:
+    #         features = generate_features(observation[0], state, "None", observation[1], "START")
+    #         feature_weights = sum((feature_weights[x] for x in features))
+    #         pi[k][state] = feature_weights
+    #         pi_edge[k][state] = "START"
+
+    #     # Move forward recursively
+    #     for observ in observation[1:]:
+    #         k += 1
+    #         pi[k] = {}
+    #         pi_edge[k] = {}
+    #         for v in states:
+    #             probabilities = {}
+    #             for u in pi[k-1].keys():
+    #                 features = generate_features(observ, observ[j-1],  v, u)
+    #                 feature_weights = sum((self.feature_weights[x] for x in features))
+
+    #                 probabilities[u] = pi[k-1][u] + feature_weights
+                    
+    #             max_state = max(probabilities, key=probabilities.get)
+    #             pi[k][v] = probabilities[max_state]
+    #             pi_edge[k][v] = max_state
+            
+        
+    #     # Transition to STOP
+    #     probabilities = {}
+    #     for u in pi[k].keys():
+    #         feature_weights = self.feature_weights[(u, "STOP")]
+    #         probabilities[u] = pi[k][u] + feature_weights
+        
+    #     # Best y_n
+    #     y_n = max(probabilities, key=probabilities.get)
+    #     state_pred_r = [y_n]
+
+    #     # Backtrack
+    #     for n in reversed(range(1, k+1)):
+    #         next_state = state_pred_r[-1]
+    #         state_pred_r.append(pi_edge[n][next_state])
+    #     state_pred_r.reverse()
+        
+    #     return state_pred_r[1:]
+
 
 
 def get_predictions(test_data_path, test_output_path, train_path):
