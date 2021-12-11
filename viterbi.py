@@ -1,4 +1,5 @@
 import math
+from os import name
 from part1_final import *
 from part2 import *
 from utils import *
@@ -97,33 +98,34 @@ def viterbi(emission_counts, transition_counts, observations, train_obs):
             back_tracker.insert(0,temp)
             
         ultimate_path.append(back_tracker) 
-        # print('Ultimate', ultimate_path)
+        print('Ultimate', ultimate_path)
     
-    return(ultimate_path)    
+    return (ultimate_path)    
 
-train_obs, emission_counts = emission_counting('./RU/train')
-transition_counts = transition_counting('./RU/train')
-observations = data_dump('./RU/dev.in')
-viterbi_outputs = viterbi(emission_counts, transition_counts,  observations, train_obs)
-# print(viterbi_outputs)
-# all_prediction = l
+if __name__=="__main__":
+    train_obs, emission_counts = emission_counting('./RU/train')
+    transition_counts = transition_counting('./RU/train')
+    observations = data_dump('./RU/dev.in')
+    viterbi_outputs = viterbi(emission_counts, transition_counts,  observations, train_obs)
+    # print(viterbi_outputs)
+    # all_prediction = l
 
-with open('./RU/dev.in', "r", encoding="utf8") as f:
-            lines = f.readlines()
+    with open('./RU/dev.in', "r", encoding="utf8") as f:
+                lines = f.readlines()
+                
+    with open('./RU/dev.p2.out', "w", encoding="utf8") as g:
+        k = 0
+        num_lines = 0
+        for j in range(len(lines)):
+            word = lines[j].strip()
             
-with open('./RU/dev.p2.out', "w", encoding="utf8") as g:
-    k = 0
-    num_lines = 0
-    for j in range(len(lines)):
-        word = lines[j].strip()
-        
-        if (word != ""):
-            path = viterbi_outputs[k][j - num_lines]
-            g.write(word + " " + path)
-            g.write("\n")
+            if (word != ""):
+                path = viterbi_outputs[k][j - num_lines]
+                g.write(word + " " + path)
+                g.write("\n")
 
-        else:
-            k+=1
-            num_lines = j + 1
-            g.write("\n")
-        
+            else:
+                k+=1
+                num_lines = j + 1
+                g.write("\n")
+            
