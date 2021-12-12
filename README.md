@@ -1,5 +1,7 @@
 # Hidden Markov Models
+
 ## 50.007 Machine Learing Project
+
 ## Instructions to run the code
 
 ### Part 4 - Structured Perceptron

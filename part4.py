@@ -1,5 +1,7 @@
-# This code is an implementation of Structured Perceptron algorithm.
-# Reference - https://taehwanptl.github.io/lectures/lecture_05_04.pdf
+'''
+This code is an implementation of Structured Perceptron algorithm.
+Reference - https://taehwanptl.github.io/lectures/lecture_05_04.pdf
+'''
 
 from os import stat
 import string
