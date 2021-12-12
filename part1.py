@@ -1,5 +1,6 @@
 import numpy as np
 from utils import *
+from part1 import *
 
 def emission_counting(path):
     # get nested list from input file
@@ -160,5 +161,38 @@ def final_answers_part1(data_file):
     labels = labelling(test_sentences,emission_dict,observations)
     
     return(labels)
+
+
+all_prediction = final_answers_part1('ES')
+
+with open('./ES/dev.in', "r", encoding="utf8") as f:
+            lines = f.readlines()
+
+with open('./ES/dev.p1.out', "w", encoding="utf8") as g:
+    for j in range(len(lines)):
+        word = lines[j].strip()
+        if word != "\n":
+            tag = all_prediction[j]
+            if(tag != "\n"):
+                g.write(word + " " + tag)
+                g.write("\n")
+            else:
+                g.write("\n")
+                
+all_prediction = final_answers_part1('RU')
+                
+with open('./RU/dev.in', "r", encoding="utf8") as f:
+            lines = f.readlines()
+
+with open('./RU/dev.p1.out', "w", encoding="utf8") as g:
+    for j in range(len(lines)):
+        word = lines[j].strip()
+        if word != "\n":
+            tag = all_prediction[j]
+            if(tag != "\n"):
+                g.write(word + " " + tag)
+                g.write("\n")
+            else:
+                g.write("\n")
     
     

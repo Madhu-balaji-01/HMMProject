@@ -4,8 +4,6 @@
 from os import stat
 import string
 from utils import *
-# from part1_final import *
-# from part2 import *
 from collections import Counter, defaultdict
 
 # Initializing global variables
