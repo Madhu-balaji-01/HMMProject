@@ -217,14 +217,15 @@ def get_predictions(test_data_path, test_output_path, train_path, learning_rate)
 
 if __name__=="__main__":
     dataset = input("Please enter 'ES' or 'RU': ")
+    mode = input("Please enter mode (dev or test): ")
     if dataset == "ES":
-        test_data_path='./ES/dev.in'
-        test_output_path='./ES/dev.p4.out'
+        test_data_path= f'./ES/{mode}.in'
+        test_output_path=f'./ES/{mode}.p4.out'
         train_path='./ES/train'
         lr = 0.1
     elif dataset == "RU":
-        test_data_path='./RU/dev.in'
-        test_output_path='./RU/dev.p4_2.out'
+        test_data_path=f'./RU/{mode}.in'
+        test_output_path=f'./RU/{mode}.p4.out'
         train_path='./RU/train'
         lr = 0.25
     else:
