@@ -216,7 +216,7 @@ def get_predictions(test_data_path, test_output_path, train_path, learning_rate)
 
 
 if __name__=="__main__":
-    dataset = input("Please enter 'ES' or 'RU': ")
+    dataset = input("Please enter dataset ('ES' or 'RU'): ")
     mode = input("Please enter mode (dev or test): ")
     if dataset == "ES":
         test_data_path= f'./ES/{mode}.in'
