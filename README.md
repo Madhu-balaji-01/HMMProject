@@ -1,6 +1,8 @@
-# Hidden Markov Models
-
+# Hidden Markov Models 
 ## 50.007 Machine Learing Project
+Madhumitha Balaji \
+Shyam Sridhar \
+Lawrence Leung
 
 ## Instructions to run the code
 
