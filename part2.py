@@ -173,6 +173,7 @@ def viterbi(emission_counts, transition_counts, observations, train_obs):
         # print('Ultimate', ultimate_path)
     return (ultimate_path)    
 
+
 if __name__=="__main__":
     dataset = input("Please enter dataset ('ES' or 'RU'): ")
     if dataset == "ES":
