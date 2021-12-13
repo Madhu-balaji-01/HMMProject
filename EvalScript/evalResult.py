@@ -31,7 +31,7 @@ def get_predicted(predicted, answers=defaultdict(lambda: defaultdict(defaultdict
             continue
         else:
             split_line = line.split(separator)
-            word = split_line[0]
+            #word = split_line[0]
             value = split_line[outputColumnIndex]
             ne = value[0]
             sent = value[2:]
@@ -105,7 +105,6 @@ def get_observed(observed):
         else:
             split_line = line.split(separator)
             word = split_line[0]
-            print(split_line)
             value = split_line[outputColumnIndex]
             ne = value[0]
             sent = value[2:]

@@ -1,13 +1,10 @@
 import math
-from os import name
 from part1 import *
 from part2 import *
 from utils import *
 
 def transition_counting(path):
-    
     temp_list = data_dump(path)
-    
     start_state = "START"
     stop_state = "STOP"
     
@@ -17,13 +14,8 @@ def transition_counting(path):
     transition_dict = {}
     
     for i in temp_list:
-        
         if end_sentence == False:
-            
-            for j in i:
-            
-                #if j!= (i[len(i) - 1]):
-                
+            for j in i:    
                 word = j
                 word = word.rsplit(" ")
                 if len(word) == 2:
@@ -48,7 +40,6 @@ def transition_counting(path):
                     end_sentence = True
                     
         if end_sentence == True:
-          
             if state_i1 not in transition_dict:
                 state_i1_dict = {}
             else:
@@ -67,8 +58,8 @@ def transition_counting(path):
                 
     return transition_dict
 
+
 def get_transition_parameters(transition_dict, state_i1, state_i2):
-    
     if state_i1 not in transition_dict:
         fraction = 0   
     else:
@@ -179,22 +170,30 @@ def viterbi(emission_counts, transition_counts, observations, train_obs):
             back_tracker.insert(0,temp)
             
         ultimate_path.append(back_tracker) 
-        print('Ultimate', ultimate_path)
-    
+        # print('Ultimate', ultimate_path)
     return (ultimate_path)    
 
 if __name__=="__main__":
-    train_obs, emission_counts = emission_counting('./RU/train')
-    transition_counts = transition_counting('./RU/train')
-    observations = data_dump('./RU/dev.in')
+    dataset = input("Please enter dataset ('ES' or 'RU'): ")
+    if dataset == "ES":
+        test_data_path= f'./ES/dev.in'
+        test_output_path=f'./ES/dev.p2.out'
+        train_path='./ES/train'
+    else:
+        test_data_path=f'./RU/dev.in'
+        test_output_path=f'./RU/dev.p2.out'
+        train_path='./RU/train'
+    
+    train_obs, emission_counts = emission_counting(train_path)
+    transition_counts = transition_counting(train_path)
+    observations = data_dump(test_data_path)
     viterbi_outputs = viterbi(emission_counts, transition_counts,  observations, train_obs)
-    # print(viterbi_outputs)
-    # all_prediction = l
+   
 
-    with open('./RU/dev.in', "r", encoding="utf8") as f:
+    with open(test_data_path, "r", encoding="utf8") as f:
                 lines = f.readlines()
                 
-    with open('./RU/dev.p2.out', "w", encoding="utf8") as g:
+    with open(test_output_path, "w", encoding="utf8") as g:
         k = 0
         num_lines = 0
         for j in range(len(lines)):

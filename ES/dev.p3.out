@@ -598,7 +598,7 @@ regular B-positive
 . O
 
 Repetiremos O
-. I-positive
+. O
 
 Agradable O
 ambiente B-positive
@@ -699,8 +699,8 @@ simplemente O
 delicioso O
 . O
 
-Normalito O
-. I-positive
+Normalito B-positive
+. O
 
 De O
 por O
@@ -937,7 +937,7 @@ trabajo O
 en O
 este O
 aspecto B-positive
-. I-positive
+. O
 
 Estupenda B-positive
 cena O
@@ -1018,7 +1018,7 @@ amable O
 . O
 
 Gracias O
-. I-positive
+. O
 
 Totalmente O
 recomendable O
@@ -1695,7 +1695,7 @@ negaban B-positive
 . O
 
 Volveremos O
-. I-positive
+. O
 
 Muy O
 recomendable O
@@ -1862,7 +1862,7 @@ cobra O
 . O
 
 Repetiré O
-! B-positive
+! O
 
 servicio O
 estupendo O
@@ -2101,7 +2101,7 @@ una O
 experiencia O
 . O
 
-Gonzalo B-positive
+Gonzalo O
 
 Aperitivos B-positive
 : O
@@ -2859,7 +2859,7 @@ quieran O
 disfrutar O
 . O
 
-Saludos B-positive
+Saludos O
 
 Algunos O
 platos O
@@ -3381,21 +3381,21 @@ creativa O
 . O
 
 Para O
-olvidar I-positive
+olvidar O
 
 Las O
 copas B-negative
 económicas I-negative
-, I-negative
-y I-negative
-el I-negative
-show I-negative
-de I-negative
-las I-negative
-Drag I-negative
+, O
+y O
+el O
+show B-positive
+de O
+las O
+Drag O
 ’ O
-s B-neutral
-regulero.En I-neutral
+s O
+regulero.En O
 resumen O
 le O
 doy O
@@ -3419,7 +3419,7 @@ a O
 lo O
 mejor O
 para O
-recenar B-positive
+recenar O
 , O
 o O
 picotear O
@@ -3427,18 +3427,18 @@ picotear O
 , O
 pero O
 no O
-esperes B-neutral
-llenarte I-neutral
+esperes O
+llenarte O
 , O
 a O
 nos O
 que O
 te O
-gastes B-negative
-un I-negative
-pastón I-negative
+gastes O
+un O
+pastón O
 . O
-Volvere B-positive
+Volvere O
 ? O
 
 El O
@@ -4130,7 +4130,7 @@ sabroso O
 . O
 
 Recomendadisimo O
-! B-positive
+! O
 
 Necesitan B-positive
 mejorar O
@@ -5021,7 +5021,7 @@ Buen O
 trato B-positive
 y O
 buena O
-comida B-negative
+comida O
 
 Inmejorables B-positive
 vistas O
@@ -5050,11 +5050,11 @@ los O
 forraron B-neutral
 con I-neutral
 huevas I-neutral
+de I-neutral
+pescado O
 de O
-pescado B-negative
-de I-negative
-color I-negative
-naranja I-negative
+color O
+naranja O
 que O
 con O
 su O
@@ -5062,25 +5062,25 @@ fuerte O
 sabor O
 y O
 estar O
-conservadas B-positive
+conservadas O
 en O
 sal O
-énmascaraban B-neutral
-el I-neutral
-sabor I-neutral
-originarl I-neutral
-de I-neutral
-los I-neutral
-platos.No I-neutral
+énmascaraban O
+el O
+sabor O
+originarl O
+de O
+los O
+platos.No O
 se O
 si O
 fue O
 casualidad O
 lo O
 de O
-añadir B-negative
-las I-negative
-huevas I-negative
+añadir O
+las O
+huevas O
 a O
 los O
 dos O
@@ -5094,7 +5094,7 @@ hicieron O
 por O
 acabar O
 la O
-latita B-positive
+latita O
 , O
 repetir O
 dos O
@@ -5103,14 +5103,14 @@ y O
 encima O
 con O
 la O
-adición B-positive
+adición O
 de O
 algo O
 muy O
-salado B-positive
+salado O
 cuando O
 habíamos O
-mencionado B-positive
+mencionado O
 la O
 cuestión O
 de O
@@ -5126,7 +5126,7 @@ haber O
 servido O
 sin O
 las O
-huevas B-positive
+huevas O
 . O
 
 Todo O
@@ -5353,10 +5353,10 @@ de O
 postre O
 y O
 muy O
-variados B-positive
+variados O
 , O
 los O
-felicitos B-positive
+felicitos O
 sin O
 mas O
 que O
@@ -5367,7 +5367,7 @@ saludo O
 y O
 espero O
 pronto O
-visitar B-positive
+visitar O
 vuestro O
 restaurant O
 hasta O
