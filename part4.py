@@ -88,24 +88,23 @@ def generate_features(observation, tag, prev_word, next_word,prev_tag):
     lower_case = observation.lower()
     suffix_3 = lower_case[-3:]
     prefix_3 = lower_case[:3]
-   
-    features = [
-            f"PREFIX3+2TAGS_{prefix_3}_{prev_tag}_{tag}",
-            f"DASH_{'-' in observation}_{tag}",
-            f"WORD_LOWER+TAG_{lower_case}_{tag}",
-            f"UPPER_{observation[0].isupper()}_{tag}",
-            # f"PREFIX2+TAG_{prefix_2}_{tag}",
-            f"SUFFIX3+2TAGS_{suffix_3}_{prev_tag}_{tag}",
-            f"WORD_LOWER+TAG_BIGRAM_{lower_case}_{tag}_{prev_tag}",
-            f"SUFFIX3+TAG_{suffix_3}_{tag}",
-            f"SUFFIX3_{suffix_3}",
-            f"WORD_LOWER+TAG_{lower_case}_{tag}",
-            f"PREFIX3+TAG_{prefix_3}_{tag}",
-            f"TAG_{tag}",
-            f"TAG_BIGRAM_{prev_tag}_{tag}",
-            f"PREFIX3_{prefix_3}",
-            f"ISPUNC_{observation in string.punctuation}"
-            ]
+
+    features = [f"TAG_{tag}",
+                f"TAG_2ORDER_{prev_tag}_{tag}",
+                f"WORD_{observation}",
+                f"WORD_BIGRAM_{prev_word}_{observation}",
+                f"WORD_TRIGRAM_{prev_word}_{observation}_{next_word}",
+                f"WORD_LOWER+TAG_{lower_case}_{tag}",
+                f"UPPER_{observation[0].isupper()}_{tag}",
+                f"PUNCTUATION_{observation in string.punctuation}",
+                f"LOWERCASE+TAG_{lower_case}_{tag}",
+                f"SUFFIX_3_{suffix_3}",
+                f"PREFIX_3_{prefix_3}",
+                f"SUFFIX_TAG_{suffix_3}_{tag}",
+                f"SUFFIX_TAG_PREVTAG_{suffix_3}_{tag}_{prev_tag}",
+                f"PREFIX_TAG_{prefix_3}_{tag}",
+                f"PREFIX_TAG_PREVTAG_{prefix_3}_{tag}_{prev_tag}"
+                ]
     return features
 
 
@@ -227,7 +226,7 @@ if __name__=="__main__":
         test_data_path=f'./RU/{mode}.in'
         test_output_path=f'./RU/{mode}.p4.out'
         train_path='./RU/train'
-        lr = 0.25
+        lr = 0.3
     else:
         print("Please enter a valid dataset")
 

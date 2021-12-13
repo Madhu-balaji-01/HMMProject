@@ -228,7 +228,7 @@
 в O
 другом O
 измерении B-negative
-. I-negative
+. O
 
 Зал O
 замечательный O
@@ -678,7 +678,7 @@
 очень O
 приятная O
 девушка-официант B-negative
-. I-negative
+. O
 
 Второй O
 этаж O
@@ -1218,8 +1218,8 @@
 торжества O
 и O
 работу O
-официантов B-negative
-. I-negative
+официантов B-positive
+. O
 
 Напитки O
 принесла O
@@ -1273,7 +1273,7 @@
 . O
 
 Кухня O
-! I-positive
+! O
 
 Миниатюрная O
 девушка O
@@ -1328,7 +1328,7 @@
 вежливо O
 и O
 предупредительно B-negative
-. I-negative
+. O
 
 Очень O
 не O
@@ -1588,7 +1588,7 @@
 не O
 понравилось O
 обслуживание B-positive
-! I-positive
+! O
 
 Меня O
 же O
@@ -2367,11 +2367,11 @@ Albertone I-negative
 ! O
 
 Расстроило O
-отсутствие I-positive
-мидий I-positive
+отсутствие O
+мидий O
 и O
 несколько O
-пересушенные B-negative
+пересушенные O
 сухарики O
 , O
 которые O
@@ -2447,8 +2447,8 @@ Albertone I-negative
 
 Очень O
 нравится O
-обслуживание B-negative
-. I-negative
+обслуживание B-positive
+. O
 
 Очень O
 понравился O
@@ -2572,7 +2572,7 @@ Albertone I-negative
 лучше O
 и O
 богаче B-negative
-. I-negative
+. O
 
 Спасибо O
 вам O
@@ -2942,20 +2942,20 @@ Land I-neutral
 и O
 к O
 ней O
-картофельная B-positive
-котлета I-positive
-, I-positive
-телятина I-positive
+картофельная O
+котлета O
+, O
+телятина O
 тоже O
 отдавала O
-уксусом B-negative
-в I-negative
-картофельной I-negative
-котлете I-negative
+уксусом O
+в O
+картофельной O
+котлете O
 оказался O
 волос O
 или O
-животного B-negative
+животного O
 или O
 человека O
 . O
@@ -3442,7 +3442,7 @@ bar-а I-neutral
 . O
 
 Умница O
-! I-positive
+! O
 
 Заказали O
 : O
@@ -3533,8 +3533,8 @@ bar-а I-neutral
 Ужас O
 этого O
 вечера O
-продолжался B-positive
-! I-positive
+продолжался B-negative
+! O
 
 Заказ O
 ждали O
@@ -3676,8 +3676,8 @@ bar-а I-neutral
 оригинально O
 подан O
 овощной O
-гарнир B-positive
-. I-positive
+гарнир O
+. O
 
 Заказав O
 в O
@@ -4167,7 +4167,7 @@ bar-а I-neutral
 . O
 
 S O
-. I-negative
+. O
 
 Небольшой O
 недочет B-negative
@@ -4768,8 +4768,8 @@ S O
 
 Заказывали O
 банкетный O
-зал B-negative
-. I-negative
+зал O
+. O
 
 Форель O
 , O
@@ -4817,7 +4817,7 @@ S O
 даже O
 не O
 извинились B-negative
-. I-negative
+. O
 
 Всё O
 , O
@@ -5238,13 +5238,13 @@ S O
 ... O
 
 Рекомендую O
-. I-negative
+. O
 
 Играет O
 тихая O
 спокойная O
-музыка B-negative
-. I-negative
+музыка B-positive
+. O
 
 Не O
 знаю O
@@ -5417,13 +5417,13 @@ S O
 же O
 никогда O
 не O
-отказываюсь B-positive
-от I-positive
-шашлыка I-positive
-из I-positive
-баранины I-positive
-на I-positive
-косточке I-positive
+отказываюсь B-negative
+от O
+шашлыка B-negative
+из I-negative
+баранины I-negative
+на O
+косточке O
 ! O
 ! O
 ! O
@@ -5438,11 +5438,11 @@ S O
 ненавязчивое O
 и O
 качественное O
-обслуживание B-negative
-. I-negative
+обслуживание B-positive
+. O
 
 Молодцы O
-. I-negative
+. O
 
 Знакомиться O
 мы O
@@ -5655,8 +5655,8 @@ S O
 , I-neutral
 располагающее I-neutral
 к I-neutral
-хорошему I-neutral
-отдыху I-neutral
+хорошему O
+отдыху O
 . O
 
 Еду O
@@ -6164,7 +6164,7 @@ S O
 . O
 
 P O
-. I-negative
+. O
 
 Об O
 этом O
@@ -6513,8 +6513,8 @@ P O
 , O
 т O
 . O
-ххх B-negative
-255 O
+ххх O
+255 B-positive
 
 Об O
 этом O
@@ -6910,7 +6910,7 @@ P O
 . O
 
 Обслуживание O
-. I-negative
+. O
 
 После O
 того O
@@ -7655,7 +7655,7 @@ P O
 видимо O
 из-за O
 волоса B-negative
-. I-negative
+. O
 
 Зашла O
 в O
@@ -7849,7 +7849,7 @@ P O
 . O
 
 Отказались O
-. I-negative
+. O
 
 Интерьер O
 симпатичный O

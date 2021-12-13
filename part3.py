@@ -155,11 +155,11 @@ if __name__=="__main__":
     dataset = input("Please enter dataset ('ES' or 'RU'): ")
     if dataset == "ES":
         test_data_path= f'./ES/dev.in'
-        test_output_path=f'./ES/dev.p4.out'
+        test_output_path=f'./ES/dev.p3.out'
         train_path='./ES/train'
     elif dataset == "RU":
         test_data_path=f'./RU/dev.in'
-        test_output_path=f'./RU/dev.p4.out'
+        test_output_path=f'./RU/dev.p3.out'
         train_path='./RU/train'
     
     train_obs, emission_counts = emission_counting(train_path)
