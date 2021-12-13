@@ -11,7 +11,8 @@ Run ```part1.py```. The generated output files ```dev.p1.out``` will be saved in
 Run ```part2.py```. When prompted for dataset, enter ```"ES"``` or ```"RU"``` in the command line to train on the ES and RU datasets respectively. The generated output files ```dev.p2.out``` will be saved in the ES and RU directory respectively.
 
 ### Part 3
-Run ```part3.py```. The generated output files ```dev.p3.out``` will be saved in the ES and RU directory respectively.
+Run ```part3.py```. When prompted for dataset, enter ```"ES"``` or ```"RU"``` in the command line to train on the ES and RU datasets respectively. The generated output files ```dev.p3.out``` will be saved in the ES and RU directory respectively.
+
 
 ### Part 4 - Structured Perceptron
  Run ```part4.py```. When prompted for dataset, enter ```"ES"``` or ```"RU"``` in the command line to train on the ES and RU datasets respectively. When prompted for mode, enter ```"dev"``` or ```"test"``` to get predictions on the development set and the test set respectively.
