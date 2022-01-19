@@ -1,11 +1,16 @@
 # Hidden Markov Models 
-## 50.007 Machine Learing Project
+## 50.007 Machine Learning Project
+Our goal is to build a sequence labelling system from training data labelled with positive, neutral and negative sentiments and then use the system
+to predict sentiment for new sentences. Specifically, we built two sentiment analysis systems
+for two different languages - Spanish and Russian. 
+
 Madhumitha Balaji \
 Shyam Sridhar \
 Lawrence Leung
 
-## Instructions to run the code
+For more details, refer to [our report](./50_007_Machine_Learning.pdf)
 
+## Instructions to run the code
 ### Part 1
 Run ```part1.py```. The generated output files ```dev.p1.out``` will be saved in the ES and RU directory respectively.
 
