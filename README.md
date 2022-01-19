@@ -8,7 +8,7 @@ Madhumitha Balaji \
 Shyam Sridhar \
 Lawrence Leung
 
-For more details, refer to [our report](./50_007_Machine_Learning.pdf)
+For more details, refer to [our report](./50_007_Machine_Learning_Project.pdf)
 
 ## Instructions to run the code
 ### Part 1
